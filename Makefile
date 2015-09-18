@@ -10,5 +10,5 @@ install: $(EXES)
 $(BIN):
 	mkdir -p $@
 
-$(BIN)/%: $(BIN)
+$(BIN)/%: $(BIN) %.go
 	go build -o $@ $(notdir $@).go
