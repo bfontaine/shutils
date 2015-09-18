@@ -26,21 +26,15 @@ func main() {
 		for scanner.Scan() {
 			incrFloat(scanner.Text())
 		}
+		// we use FormatFloat instead of %f here to print only the smallest
+		// number of digits
+		fmt.Println(strconv.FormatFloat(sum, 'f', -1, 64))
 	} else {
 		for scanner.Scan() {
 			incrInt(scanner.Text())
 		}
+		fmt.Printf("%d\n", int64(sum))
 	}
-
-	var format string
-
-	if floatSum {
-		format = "%f\n"
-	} else {
-		format = "%d\n"
-	}
-
-	fmt.Printf(format, sum)
 }
 
 func incrFloat(s string) {
