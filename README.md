@@ -1,8 +1,10 @@
 # Shutils
 
-**shutils** is a set of small shell utilities.
+**shutils** is a set of small shell utilities written in Go.
 
 ## Install
+
+You need to have Go in order to compile the files.
 
     git clone https://github.com/bfontaine/shutils.git
     cd shutils && make install
