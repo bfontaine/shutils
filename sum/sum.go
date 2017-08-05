@@ -40,9 +40,7 @@ func main() {
 		for scanner.Scan() {
 			incrFloat(scanner.Text())
 		}
-		// we use FormatFloat instead of %f here to print only the smallest
-		// number of digits
-		fmt.Println(strconv.FormatFloat(sum, 'f', -1, 64))
+		fmt.Printf("%g\n", sum)
 	} else {
 		for scanner.Scan() {
 			incrInt(scanner.Text())
