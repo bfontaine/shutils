@@ -13,5 +13,5 @@ uninstall:
 $(BIN):
 	mkdir -p $@
 
-$(BIN)/%: $(BIN) %.go
-	go build -o $@ $(notdir $@).go
+$(BIN)/%: %/%.go $(BIN)
+	go build -o $@ $<
