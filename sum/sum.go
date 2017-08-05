@@ -15,9 +15,23 @@ var (
 	scanner *bufio.Scanner
 )
 
+const VERSION = "0.1.0"
+
+func printVersionAndExit() {
+	fmt.Printf("shutils version %s\n", VERSION)
+	os.Exit(0)
+}
+
 func main() {
+	var versionOpt bool
+
 	flag.BoolVar(&floatSum, "F", false, "compute the sum as a float")
+	flag.BoolVar(&versionOpt, "v", false, "print the version")
 	flag.Parse()
+
+	if versionOpt {
+		printVersionAndExit()
+	}
 
 	scanner = bufio.NewScanner(os.Stdin)
 	scanner.Split(bufio.ScanWords)
